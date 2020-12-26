@@ -1,0 +1,15 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../commons.gradle'
+
+dependencies {
+
+    implementation project(Modules.models)
+    implementation project(Modules.repository)
+
+    implementation Libraries.coroutines_core
+    implementation Libraries.coroutines_android
+}

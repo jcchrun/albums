@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../commons.gradle'
+
+dependencies {
+
+    implementation project(Modules.core)
+    implementation project(Modules.models)
+    implementation project(Modules.remote)
+    implementation project(Modules.locale)
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Albums</string>
+    <string name="error_message">"Une erreur est survenue, merci de réessayer plus tard"</string>
+</resources>

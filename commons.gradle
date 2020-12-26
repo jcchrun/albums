@@ -1,0 +1,68 @@
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+
+android {
+    compileSdkVersion Versions.compile_sdk
+    buildToolsVersion Versions.build_tools_version
+
+    defaultConfig {
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode Versions.version_code
+        versionName Versions.version_name
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", "\"https://static.leboncoin.fr\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation Libraries.appcompat
+    implementation Libraries.core_ktx
+    implementation Libraries.fragment_ktx
+    implementation Libraries.activity_ktx
+
+    implementation Libraries.hilt
+    kapt Libraries.hilt_compiler
+    implementation Libraries.hilt_lifecycle_viewmodel
+    kapt Libraries.hilt_jetpack_compiler
+
+    implementation Libraries.retrofit
+    implementation Libraries.retrofit_moshi
+    implementation Libraries.okhttp3
+    implementation Libraries.okhttp3_logging
+
+    implementation Libraries.room_runtime
+    implementation Libraries.room_ktx
+    annotationProcessor Libraries.room_compiler
+    kapt Libraries.room_compiler
+    //
+    testImplementation TestLibraries.junit
+    testImplementation TestLibraries.mockk
+    testImplementation TestLibraries.coroutines_test
+    testImplementation TestLibraries.core_testing
+    //
+    androidTestImplementation AndroidTestLibraries.junit
+    androidTestImplementation AndroidTestLibraries.espresso
+    androidTestImplementation AndroidTestLibraries.espresso_contrib
+    androidTestImplementation AndroidTestLibraries.runner
+    androidTestImplementation AndroidTestLibraries.rules
+    androidTestImplementation AndroidTestLibraries.truth
+}

@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="splash_logo_size">92dp</dimen>
+    <dimen name="splash_title_text_size">24sp</dimen>
+    <dimen name="splash_margin_top">24dp</dimen>
+</resources>

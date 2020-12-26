@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="title_height">40dp</dimen>
+    <dimen name="margin">12dp</dimen>
+    <dimen name="album_root_item_margin">12dp</dimen>
+    <dimen name="album_root_item_margin_small">6dp</dimen>
+    <dimen name="album_root_item_round_radius">10dp</dimen>
+
+    <dimen name="album_descendant_image_width">50dp</dimen>
+
+    <dimen name="error_image_width">120dp</dimen>
+    <dimen name="error_button_width">120dp</dimen>
+    <dimen name="error_component_margin">12dp</dimen>
+
+</resources>

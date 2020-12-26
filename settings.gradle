@@ -1,0 +1,10 @@
+include ':testUtils'
+include ':core'
+include ':domain'
+include ':locale'
+include ':remote'
+include ':repository'
+include ':models'
+include ':presentation'
+include ':app'
+rootProject.name = "Albums"

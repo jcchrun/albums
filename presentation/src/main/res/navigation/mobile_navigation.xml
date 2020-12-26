@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/album_list">
+    <fragment
+        android:id="@+id/album_list"
+        android:name="com.jcchrun.albums.presentation.albums.list.AlbumRootListFragment"
+        tools:layout="@layout/fragment_album_list">
+
+        <action
+            android:id="@+id/next_action"
+            app:destination="@+id/album_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/album_details"
+        android:name="com.jcchrun.albums.presentation.albums.details.AlbumDetailsFragment"
+        tools:layout="@layout/fragment_album_detail">
+        <argument
+            android:name="albumId"
+            app:argType="integer"
+            android:defaultValue="0"/>
+        <argument
+            android:name="albumImageUrl"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="albumTitle"
+            app:argType="string"
+            android:defaultValue=""/>
+    </fragment>
+</navigation>

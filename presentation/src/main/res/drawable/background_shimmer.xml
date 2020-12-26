@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/gray_shimmer" /><!-- this color can be altered by overriding backgroundTint attribute-->
+
+    <corners android:radius="@dimen/album_root_item_round_radius" />
+
+</shape>
