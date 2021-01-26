@@ -7,6 +7,7 @@ import android.widget.ImageView
 import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -96,7 +97,7 @@ class AlbumRootListFragment : Fragment(R.layout.fragment_album_list), AlbumRootA
     }
 
     private fun observeAlbumList(bindings: FragmentAlbumListBinding) {
-        albumRootListViewModel.albumsRootListLiveData.observe(viewLifecycleOwner, {
+        albumRootListViewModel.albumsRootListLiveData.observe(viewLifecycleOwner, Observer<Output<List<Album>>> {
             hideShimmerCallback?.invoke()
 
             bindings.errorRoot.errorImage.visibility = View.VISIBLE

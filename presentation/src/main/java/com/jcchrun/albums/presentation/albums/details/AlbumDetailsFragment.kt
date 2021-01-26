@@ -6,12 +6,14 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.transition.TransitionInflater
 import coil.load
 import com.google.android.material.appbar.AppBarLayout
 import com.jcchrun.album.core.extensions.isPortrait
+import com.jcchrun.albums.models.Album
 import com.jcchrun.albums.presentation.R
 import com.jcchrun.albums.presentation.albums.ui.MarginItemDecoration
 import com.jcchrun.albums.presentation.databinding.FragmentAlbumDetailBinding
@@ -80,7 +82,7 @@ class AlbumDetailsFragment: Fragment(R.layout.fragment_album_detail) {
     }
 
     private fun observeAlbumList() {
-        albumDetailsViewModel.albumsLiveData.observe(viewLifecycleOwner, {
+        albumDetailsViewModel.albumsLiveData.observe(viewLifecycleOwner, Observer<List<Album>> {
             albumDescendantAdapter.submitList(it)
         })
     }

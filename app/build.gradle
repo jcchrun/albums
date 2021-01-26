@@ -19,7 +19,7 @@ dependencies {
     implementation project(Modules.presentation)
     implementation project(Modules.remote)
     implementation project(Modules.repository)
-    implementation project(Modules.testUtils)
+    testImplementation project(Modules.testUtils)
 
     implementation Libraries.constraintlayout
     implementation Libraries.materialViews
