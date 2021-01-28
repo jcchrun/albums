@@ -1,6 +1,7 @@
 package com.jcchrun.albums
 
 import android.app.Application
+import android.os.Debug
 import com.facebook.stetho.Stetho
 import dagger.hilt.android.HiltAndroidApp
 
@@ -14,6 +15,8 @@ class AlbumsApplication: Application() {
     }
 
     private fun setupStetho() {
-        Stetho.initializeWithDefaults(this)
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this)
+        }
     }
 }
